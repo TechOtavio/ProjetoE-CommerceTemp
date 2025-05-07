@@ -1,0 +1,69 @@
+.produto-pagina {
+    padding: 2rem;
+  }
+
+  .produto-galeria img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .produto-info h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .size-opcao,
+  .color-opcao {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 8px;
+    border: 2px solid transparent;
+  }
+
+  .size-opcao.selecao,
+  .color-opcao.selecao {
+    border-color: #000;
+  }
+
+  .color-cyan {
+    background-color: #00e6e6;
+  }
+
+  .color-gray {
+    background-color: #888;
+  }
+
+  .color-purple {
+    background-color: #6c63ff;
+  }
+
+  .color-pink {
+    background-color: #ff4f81;
+  }
+
+  .produto-images-poleg img {
+    width: 60px;
+    height: auto;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .relacional-produtos .card {
+    text-align: center;
+  }
+
+  .preco-original {
+    text-decoration: line-through;
+    color: gray;
+  }
+
+  .preco-diconto {
+    color: green;
+    font-weight: bold;
+  }
