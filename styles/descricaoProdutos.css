@@ -1,19 +1,39 @@
-.produto-pagina {
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+  
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  
+}
+
+.produto {
     padding: 2rem;
   }
 
-  .produto-galeria img {
+.galeria img {
     max-width: 100%;
     border-radius: 10px;
   }
 
-  .produto-info h1 {
-    font-size: 1.8rem;
+  .info-produto h1{
+     font-size: 1.8rem;
     font-weight: bold;
   }
 
-  .size-opcao,
-  .color-opcao {
+
+.produto-img img {
+    width: 60px;
+    height: auto;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+.tamanho-opcao,
+.cor-opcao {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -25,45 +45,38 @@
     border: 2px solid transparent;
   }
 
-  .size-opcao.selecao,
-  .color-opcao.selecao {
+.tamanho-opcao.selecao,
+.cor-opcao.selecao {
     border-color: #000;
   }
 
-  .color-cyan {
+.cor-cyan {
     background-color: #00e6e6;
   }
 
-  .color-gray {
+.cor-gray {
     background-color: #888;
   }
 
-  .color-purple {
+.cor-purple {
     background-color: #6c63ff;
   }
 
-  .color-pink {
+.cor-pink {
     background-color: #ff4f81;
   }
-
-  .produto-images-poleg img {
-    width: 60px;
-    height: auto;
-    border-radius: 6px;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-
-  .relacional-produtos .card {
+  
+    .produtos-relacionados .card {
     text-align: center;
   }
 
-  .preco-original {
+.preco-original {
     text-decoration: line-through;
     color: gray;
   }
 
-  .preco-diconto {
+.preco-diconto {
     color: green;
     font-weight: bold;
   }
+  
