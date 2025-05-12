@@ -2,42 +2,47 @@
 <html lang="pt-BR">
 
 <head>
+  <!-- Metadados e links de estilos -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Lista de produtos da Digital Store com filtros, ordenação e categorias.">
   <title>Lista Produtos</title>
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <!-- Estilo personalizado -->
   <link rel="stylesheet" href="/styles/ListaProdutos.css">
+  <!-- Ícones do Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
   <header>
-      <!-- RESPONSIVIDADE NO DESKTOP -->
+      <!-- Header para desktop -->
         <div class="d-none d-md-block">
           <section class="conteudo-aplicacao">
                 <div class="d-flex gap-2 mt-4 ">
+                    <!-- Logo -->
                     <div>
                         <img src="/public/Vector.svg" alt="simbolo da logo" />
                         <img src="/public/DigitalStore.svg" alt="texto da logo" class="mt-2 ms-2" />
                     </div>
 
+                    <!-- Barra de pesquisa -->
                     <div class="d-flex flex-fill justify-content-center mt-1">
                         <div class="input-group w-75">
-        
                             <input
                               id="input-search"
                               type="search"
                               class="form-control border-end-0 backgroundInput"
                               placeholder="Pesquisar produtos..."
                               aria-label="Pesquisar produtos" />
-                  
                             <button id="btn-input-search" class="input-group-text  border-start-0 ">
                               <i class="bi bi-search text-secondary"></i>
                             </button>
                         </div>
                     </div>
 
+                    <!-- Links de usuário e carrinho -->
                     <div class="d-flex flex-fill align-items-center justify-content-between">                                                                                                  
                         <a href="#" class=" text-dark ">Cadastre-se</a>
                         <button class="button-primary">Entrar</button>
@@ -46,6 +51,7 @@
                 </div>           
         </section>
 
+        <!-- Navegação principal -->
         <section class="conteudo-aplicacao">
             <nav>
               <div class="d-flex mt-4">
@@ -58,36 +64,36 @@
         </section>
         </div>
 
-      <!-- RESPONSIVIDADE MOBILE -->
+      <!-- Header para mobile -->
         <section class="d-sm-block d-md-none">
-
           <nav class="navbar navbar-expand-lg py-3">
               <div class="container">
+                  <!-- Botão menu hamburguer -->
                   <button class="navbar-toggler border-0 p-0 mt-1 focus-ring shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <i class="bi bi-list"></i>
                   </button>
 
+                  <!-- Logo mobile -->
                   <a href="#" class="navbar-brand text-center">
                       <img src="/public/Vector.svg" alt="simbolo da logo" class="img-logo-mobile" />
                       <img src="/public/DigitalStore.svg" alt="texto da logo" class="img-logo-texto mt-1" />
                   </a>
 
+                <!-- Pesquisa e carrinho mobile -->
                 <div class="d-flex align-items-center">
                             <button id="btn-input-search" class="input-group-text border-0 bg-transparent mt-1" onclick="mostrarInput()">
                                <i class="bi bi-search text-secondary"></i>
                             </button>
-
                   <a href="#">
                       <img src="/public/Buy.svg" alt="carrinho" class=""/>
                   </a>
                 </div>
 
+                <!-- Menu lateral mobile -->
                 <div class="collapse navbar-collapse modal-abaixo bg-white" tabindex="-1" id="navbarNav">
-
                   <div class="offcanvas-header">
                         <button type="button" class="btn-close border-0  focus-ring shadow-none" id="btn-fechar-modal" aria-label="Close"></button>
                   </div>
-                
                   <div class="offcanvas-body ms-3">
                         <ul class="navbar-nav mt-5">
                           <li class="nav-item mb-3">
@@ -106,18 +112,16 @@
                            <a href="Meus Pedidos" class=" ms-2 fs-5  text-secondary">Meus Pedidos</a>
                           </li>
                         </ul>
-
-                        
+                        <!-- Botões de login/cadastro mobile -->
                         <div class="mt-auto w-100 pe-3 d-flex flex-column align-items-center ">
                           <div class="border-top border-1 mb-3 w-100"></div>
                           <a href="pages/Home.html" class="button-primary text-center mb-2 w-100">Entrar</a>
                           <a href="#" class="d-block text-center cor-primary-text fw-light mb-3"><u>Cadastre-se</u></a>
                         </div>
-                        
                   </div>
-                  
                 </div>
               </div>
+              <!-- Input de pesquisa expandido mobile -->
               <div class="d-none d-flex conteudo-aplicacao w-100" id="input-collapse">
                    <input
                         id="input-search"
@@ -125,7 +129,6 @@
                         class="form-control border-end-0 backgroundInput rounded-end-0"
                         placeholder="Pesquisar produtos..."
                         aria-label="Pesquisar produtos" />
-                  
                    <button 
                         id="btn-input-search" 
                         class="input-group-text  border-start-0 m-0 rounded-start-0"
@@ -134,12 +137,11 @@
                     </button>
               </div>
           </nav>
-
         </section>
     </header>
   <main class="pb-5">
 
-
+    <!-- Barra de resultado e ordenação -->
     <section class="conteudo-aplicacao d-flex align-items-center">
       <div class="w-50 text-start my-3">
         <p class="m-0"><strong>Resultado para "Produtos"</strong> - "n" produtos</p>
@@ -154,9 +156,12 @@
         </select>
       </div>
     </section>
+
+    <!-- Filtros de produtos -->
     <div id="filtrar" class="conteudo-aplicacao rounded-2 p-3 d-flex">
         <p>Filtrar por: </p>
         <hr>
+        <!-- Filtro por marca -->
         <div>
           <p>Marca</p>
           <input id="Adidas" type="checkbox" class="Checkbox">
@@ -170,6 +175,7 @@
           <input id="Puma" type="checkbox" class="Checkbox">
           <label for="Puma"> Puma</label><br>
         </div>
+        <!-- Filtro por categoria -->
         <div>
           <p class="p-tema-filtro">Categoria</p>
           <input id="Esporte e lazer" type="checkbox" class="Checkbox">
@@ -181,6 +187,7 @@
           <input id="Corrida" type="checkbox" class="Checkbox">
           <label for="Corrida"> Corrida</label><br>
         </div>
+        <!-- Filtro por gênero -->
         <div>
           <p class="p-tema-filtro">Gênero</p>
           <input id="Masculino" type="checkbox" class="Checkbox">
@@ -190,6 +197,7 @@
           <input id="Unisex" type="checkbox" class="Checkbox">
           <label for="Unisex"> Unisex</label><br>
         </div>
+        <!-- Filtro por estado -->
         <div>
           <p class="p-tema-filtro">Estado</p>
           <div class="d-flex align-items-center">
@@ -202,6 +210,8 @@
           </div>
         </div>
       </div>
+
+    <!-- Cards de produtos (primeira linha) -->
     <section class="d-flex sectionCards">
       <div class="divCards d-flex">
         <div class="card">
@@ -214,6 +224,7 @@
             <p class="card-text"><strong>R$100</strong></p>
           </div>
         </div>
+        <!-- Outros cards... -->
         <div class="card">
           <div class="divTenis">
             <img src="/public/TênisDigitalStoreFundoRemovido.png" class="card-img-top imagemTenis" alt="Tenis">
@@ -236,6 +247,7 @@
         </div>  
       </div>      
     </section>
+    <!-- Cards de produtos (segunda linha) -->
     <section class="d-flex sectionCards">
       <div class="divCards d-flex">
         <div class="card">
@@ -248,6 +260,7 @@
             <p class="card-text"><strong>R$100</strong></p>
           </div>
         </div>
+        <!-- Outros cards... -->
         <div class="card">
           <div class="divTenis">
             <img src="/public/TênisDigitalStoreFundoRemovido.png" class="card-img-top imagemTenis" alt="Tenis">
@@ -270,27 +283,23 @@
         </div>  
       </div>
     </section>
-
-
   </main>
   <footer>
     <div class="conteudo-aplicacao d-flex justify-content-between">
-
+      <!-- Logo e redes sociais -->
       <div class="logo-footer d-flex flex-column mb-4">
         <img src="/public/logo-footer.svg" alt="logo em preto e branco" class="mb-3" />
-
         <p class="paragrafo-footer">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Nobis incidunt consequatur in excepturi?
         </p>
-
         <div class="redes-footer mt-3">
           <a href="https://www.facebook.com/?locale=pt_BR"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
           <a href="https://x.com/?lang=pt"><i class="bi bi-twitter-x"></i></a>
         </div>
       </div>
-
+      <!-- Colunas de informação -->
       <div class="coluna-footer coluna-informacao mb-4">
         <p>Informação</p>
         <ul>
@@ -302,7 +311,6 @@
           <li>Meus Pedidos</li>
         </ul>
       </div>
-
       <div class="coluna-footer mb-4">
         <p>Categorias</p>
         <ul>
@@ -313,7 +321,7 @@
           <li>Tênis</li>
         </ul>
       </div>
-
+      <!-- Contato -->
       <div class="contato-footer coluna-footer mb-4">
         <p>Contato</p>
         <p>
@@ -322,15 +330,13 @@
         <p>(85) 3051-3411</p>
       </div>
     </div>
-
     <div class="linha-footer"></div>
-
     <div class="text-center pb-3">
       © 2022 Digital College
     </div>
   </footer>
 </body>
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-
 </html>
