@@ -125,15 +125,16 @@ main{
 }
 .sectionCards{
     height: 450px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .divCards{
     height: 450px;
+    margin: 0 0 0 75px;
 }
 .card{
     width: 292px;
     height: 321px;
-    margin: 0 10px 30px 10px;
+    margin: 0 10px 30px 25px;
     border: 0;
 }
 

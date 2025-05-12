@@ -11,51 +11,132 @@
   <link rel="stylesheet" href="/styles/ListaProdutos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
-
 <body>
   <header>
-    <section class="conteudo-aplicacao">
-      <div class="d-flex gap-2 mt-4 ">
-        <div>
-          <img src="/public/Vector.svg" alt="simbolo da logo" />
-          <img src="/public/DigitalStore.svg" alt="texto da logo" class="mt-2 ms-2" />
-        </div>
-        <div class="d-flex flex-fill justify-content-center mt-1">
-          <div class="input-group w-75">
-            <input id="input-search" type="search" class="form-control border-end-0 backgroundInput"
-              placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos" />
+      <!-- RESPONSIVIDADE NO DESKTOP -->
+        <div class="d-none d-md-block">
+          <section class="conteudo-aplicacao">
+                <div class="d-flex gap-2 mt-4 ">
+                    <div>
+                        <img src="/public/Vector.svg" alt="simbolo da logo" />
+                        <img src="/public/DigitalStore.svg" alt="texto da logo" class="mt-2 ms-2" />
+                    </div>
 
-            <button id="btn-input-search" class="input-group-text  border-start-0 ">
-              <i class="bi bi-search text-secondary"></i>
-            </button>
-          </div>
+                    <div class="d-flex flex-fill justify-content-center mt-1">
+                        <div class="input-group w-75">
+        
+                            <input
+                              id="input-search"
+                              type="search"
+                              class="form-control border-end-0 backgroundInput"
+                              placeholder="Pesquisar produtos..."
+                              aria-label="Pesquisar produtos" />
+                  
+                            <button id="btn-input-search" class="input-group-text  border-start-0 ">
+                              <i class="bi bi-search text-secondary"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-fill align-items-center justify-content-between">                                                                                                  
+                        <a href="#" class=" text-dark ">Cadastre-se</a>
+                        <button class="button-primary">Entrar</button>
+                        <img src="/public/Buy.svg" alt="carrinho" class="" />
+                    </div>
+                </div>           
+        </section>
+
+        <section class="conteudo-aplicacao">
+            <nav>
+              <div class="d-flex mt-4">
+                <a href="Home" class=" fs-5 fw-semibold text-secondary">Home</a>
+                <a href="Produtos" class="ms-5 fs-5 fw-semibold text-secondary">Produtos</a>
+                <a href="Categorias" class="ms-5 fs-5 fw-semibold text-secondary">Categorias</a>
+                <a href="Meus Pedidos" class=" ms-5 fs-5 fw-semibold text-secondary">Meus Pedidos</a>
+              </div>
+            </nav>
+        </section>
         </div>
 
-        <div class="d-flex flex-fill align-items-center justify-content-between">
-          <a href="#" class=" text-dark ">Cadastre-se</a>
-          <button class="button-primary">Entrar</button>
-          <img src=" /public/Buy.svg" alt="carrinho" class="" />
-        </div>
-      </div>
-      <div class="DivNavBar my-3">
-        <nav class="navbar">
-          <div class="collapse d-none d-md-inline-flex align-items-center">
-            <a href="" class="fs-5 fw-semibold text-secondary">Home</a>
-            <a href="" class="ms-5 fs-5 fw-semibold text-secondary">Produtos</a>
-            <a href="" class="ms-5 fs-5 fw-semibold text-secondary">Categorias</a>
-            <a href="" class="ms-5 fs-5 fw-semibold text-secondary">Meus Pedidos</a>
-          </div>
-          <div class="container-fluid d-md-none">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-        </nav>
-      </div>
-    </section>
-  </header>
+      <!-- RESPONSIVIDADE MOBILE -->
+        <section class="d-sm-block d-md-none">
+
+          <nav class="navbar navbar-expand-lg py-3">
+              <div class="container">
+                  <button class="navbar-toggler border-0 p-0 mt-1 focus-ring shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <i class="bi bi-list"></i>
+                  </button>
+
+                  <a href="#" class="navbar-brand text-center">
+                      <img src="/public/Vector.svg" alt="simbolo da logo" class="img-logo-mobile" />
+                      <img src="/public/DigitalStore.svg" alt="texto da logo" class="img-logo-texto mt-1" />
+                  </a>
+
+                <div class="d-flex align-items-center">
+                            <button id="btn-input-search" class="input-group-text border-0 bg-transparent mt-1" onclick="mostrarInput()">
+                               <i class="bi bi-search text-secondary"></i>
+                            </button>
+
+                  <a href="#">
+                      <img src="/public/Buy.svg" alt="carrinho" class=""/>
+                  </a>
+                </div>
+
+                <div class="collapse navbar-collapse modal-abaixo bg-white" tabindex="-1" id="navbarNav">
+
+                  <div class="offcanvas-header">
+                        <button type="button" class="btn-close border-0  focus-ring shadow-none" id="btn-fechar-modal" aria-label="Close"></button>
+                  </div>
+                
+                  <div class="offcanvas-body ms-3">
+                        <ul class="navbar-nav mt-5">
+                          <li class="nav-item mb-3">
+                            <a href="#" class=" ms-2 fs-5 fw-semibold  text-secondary">Páginas</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="Home.html" class="ms-2 fs-5  text-secondary">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="Produtos" class="ms-2 fs-5  text-secondary">Produtos</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="Categorias" class="ms-2 fs-5  text-secondary">Categorias</a>
+                          </li>
+                          <li class="nav-item">
+                           <a href="Meus Pedidos" class=" ms-2 fs-5  text-secondary">Meus Pedidos</a>
+                          </li>
+                        </ul>
+
+                        
+                        <div class="mt-auto w-100 pe-3 d-flex flex-column align-items-center ">
+                          <div class="border-top border-1 mb-3 w-100"></div>
+                          <a href="pages/Home.html" class="button-primary text-center mb-2 w-100">Entrar</a>
+                          <a href="#" class="d-block text-center cor-primary-text fw-light mb-3"><u>Cadastre-se</u></a>
+                        </div>
+                        
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="d-none d-flex conteudo-aplicacao w-100" id="input-collapse">
+                   <input
+                        id="input-search"
+                        type="search"
+                        class="form-control border-end-0 backgroundInput rounded-end-0"
+                        placeholder="Pesquisar produtos..."
+                        aria-label="Pesquisar produtos" />
+                  
+                   <button 
+                        id="btn-input-search" 
+                        class="input-group-text  border-start-0 m-0 rounded-start-0"
+                        type="button" data-bs-toggle="offcanvas" data-bs-target="navbarNav">     
+                      <i class="bi bi-search text-secondary"></i>
+                    </button>
+              </div>
+          </nav>
+
+        </section>
+    </header>
   <main class="pb-5">
 
 
@@ -121,15 +202,15 @@
           </div>
         </div>
       </div>
-    <section class="conteudo-aplicacao d-flex sectionCards">
+    <section class="d-flex sectionCards">
       <div class="divCards d-flex">
-        <div class="card" style="margin-left: 100px;">
+        <div class="card">
           <div class="divTenis">
             <img src="/public/TênisDigitalStoreFundoRemovido.png" class="card-img-top imagemTenis" alt="Tenis">
           </div>
           <div class="card-body">
-            <p>Tênis</p>
-            <h5 class="card-title">K-Swiss V8 - Masculino</h5>
+            <p style="opacity: 0.5;">Tênis</p>
+            <h5 class="card-title" style="opacity: 0.8;">K-Swiss V8 - Masculino</h5>
             <p class="card-text"><strong>R$100</strong></p>
           </div>
         </div>
@@ -138,8 +219,8 @@
             <img src="/public/TênisDigitalStoreFundoRemovido.png" class="card-img-top imagemTenis" alt="Tenis">
           </div>
           <div class="card-body">
-            <p>Tênis</p>
-            <h5 class="card-title">K-Swiss V8 - Masculino</h5>
+            <p style="opacity: 0.5;">Tênis</p>
+            <h5 class="card-title" style="opacity: 0.8;">K-Swiss V8 - Masculino</h5>
             <p class="card-text"><strong>R$100</strong></p>
           </div>
         </div>
@@ -148,22 +229,22 @@
             <img src="/public/TênisDigitalStoreFundoRemovido.png" class="card-img-top imagemTenis" alt="Tenis">
           </div>
           <div class="card-body">
-            <p>Tênis</p>
-            <h5 class="card-title">K-Swiss V8 - Masculino</h5>
+            <p style="opacity: 0.5;">Tênis</p>
+            <h5 class="card-title" style="opacity: 0.8;">K-Swiss V8 - Masculino</h5>
             <p class="card-text"><strong>R$100</strong></p>
           </div>
         </div>  
       </div>      
     </section>
-    <section class="conteudo-aplicacao d-flex">
+    <section class="d-flex sectionCards">
       <div class="divCards d-flex">
-        <div class="card" style="margin-left: 100px;">
+        <div class="card">
           <div class="divTenis">
             <img src="/public/TênisDigitalStoreFundoRemovido.png" class="card-img-top imagemTenis" alt="Tenis">
           </div>
           <div class="card-body">
-            <p>Tênis</p>
-            <h5 class="card-title">K-Swiss V8 - Masculino</h5>
+            <p style="opacity: 0.5;">Tênis</p>
+            <h5 class="card-title" style="opacity: 0.8;">K-Swiss V8 - Masculino</h5>
             <p class="card-text"><strong>R$100</strong></p>
           </div>
         </div>
@@ -172,8 +253,8 @@
             <img src="/public/TênisDigitalStoreFundoRemovido.png" class="card-img-top imagemTenis" alt="Tenis">
           </div>
           <div class="card-body">
-            <p>Tênis</p>
-            <h5 class="card-title">K-Swiss V8 - Masculino</h5>
+            <p style="opacity: 0.5;">Tênis</p>
+            <h5 class="card-title" style="opacity: 0.8;">K-Swiss V8 - Masculino</h5>
             <p class="card-text"><strong>R$100</strong></p>
           </div>
         </div>
@@ -182,8 +263,8 @@
             <img src="/public/TênisDigitalStoreFundoRemovido.png" class="card-img-top imagemTenis" alt="Tenis">
           </div>
           <div class="card-body">
-            <p>Tênis</p>
-            <h5 class="card-title">K-Swiss V8 - Masculino</h5>
+            <p style="opacity: 0.5;">Tênis</p>
+            <h5 class="card-title" style="opacity: 0.8;">K-Swiss V8 - Masculino</h5>
             <p class="card-text"><strong>R$100</strong></p>
           </div>
         </div>  
